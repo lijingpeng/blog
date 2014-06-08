@@ -64,6 +64,20 @@ Frank Lee's Blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="/swift-and-llvm.html">Swift and LLVM</a></h2>
+                <div class="summary"><hr />
+<p>2014年6月2号，苹果在一年一度的WWDC上发布了新的编程语言Swift，根据苹果的官方介绍，Swift从开始研发到最终发布用了仅不足4年的时间，这应该算是一个比较短的时间周期了，另外WWDC上苹果还介绍了Swift的一些关键特性，例如：
+- Swift从一些脚本语言如Python、Ruby、Javascript上吸取了一些好的特性
+- 提供实时预览Playgrounds
+- 性能比Objective-C 提升了大约40%～50%  </p>
+<p>当然还有一些其他的特性，在这里就不列举了，不过从性能指标上来看，这个提升度是相当惊人的，这背后“必有蹊跷”，看看Swift的研发团队——苹果开发者工具部门总监克里斯·拉特纳（Chris Lattner）及其所带领的团队，我们可能恍然大悟，Lattner时LLVM项目的发起人，也是主要作者，在此，我们也简要介绍一下LLVM项目</p>
+<blockquote>
+<p>LVM，命名最早源自于底层虚拟机（Low Level Virtual Machine）的缩写。它是一个编译器的基础建设，以C++写成。它是为了任意一种编程语言写成的程序，利用虚拟技术，创造出编译时期，链结时期，运行时期以及“闲置时期”的优化。它最早是以C/C ...</p></blockquote>
+                    <a class="btn btn-default btn-xs" href="/swift-and-llvm.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="/ldd-ming-ling-de-jie-shao-he-shi-yong-fang-fa.html">ldd 命令的介绍和使用方法</a></h2>
                 <div class="summary"><hr />
 <p>ldd 能够显示可执行模块的dependency，其原理是通过设置一系列的环境变量，如下：LD_TRACE_LOADED_OBJECTS、LD_WARN、LD_BIND_NOW、LD_LIBRARY_VERSION、LD_VERBOSE等。当LD_TRACE_LOADED_OBJECTS环境变量不为空时，任何可执行程序在运行时，它都会只显示模块的dependency，而程序并不真正执行。</p>
@@ -142,18 +156,13 @@ publishconf.py
                 <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group" id="tags">
                         <li class="list-group-item tag-4">
+                            <a href="/tag/pages.html">
+                                pages
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
                             <a href="/tag/blog.html">
                                 blog
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/github.html">
-                                github
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/photo.html">
-                                photo
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -162,8 +171,23 @@ publishconf.py
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/yu-ming.html">
-                                域名
+                            <a href="/tag/llvm.html">
+                                llvm
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/github.html">
+                                github
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/swift.html">
+                                swift
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/linux.html">
+                                linux
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -172,13 +196,13 @@ publishconf.py
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/pages.html">
-                                pages
+                            <a href="/tag/yu-ming.html">
+                                域名
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/linux.html">
-                                linux
+                            <a href="/tag/photo.html">
+                                photo
                             </a>
                         </li>
                     </ul>

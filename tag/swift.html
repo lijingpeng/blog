@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>pages - Frank Lee's Blog</title>
+    <title>swift - Frank Lee's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -64,37 +64,16 @@ Frank Lee's Blog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">Github pages 搭建个人博客并绑定域名</a></h2>
+                <h2><a href="/swift-and-llvm.html">Swift and LLVM</a></h2>
                 <div class="summary"><hr />
-<p>目前，github下pelican搭建的极简主义的博客越来越受到大家的欢迎，本文介绍在github中一个仓库同时保存Markdown博客主内容和HTML网页，并绑定域名。 我们将markdown文件保存在仓库的master分支中，将HTML网页保存在gh-pages分支中，并将域名绑定到gh-pages分支，下面是操作步骤：</p>
-<h3>1. 首先在github创建仓库</h3>
-<p>并不局限于username.github.com这种的顶级域名仓库，如果想创建类似blog.example.com的博客，直接创建一个名字为blog的仓库即可。</p>
-<h3>2. 克隆到本地：</h3>
-<div class="highlight"><pre> git clone git@github.com:yourusername/blog.git 
-</pre></div>
-
-
-<h3>3. 在克隆后的blog目录中初始化pelican工作目录</h3>
-<div class="highlight"><pre><span class="nb">cd </span>blog  
-pelican-quickstart 
-</pre></div>
-
-
-<p>这样，本地blog目录将会有以下目录结构：</p>
-<div class="highlight"><pre>content  
-develop_server.sh*  
-fabfile.py  
-Makefile  
-output  
-pelicanconf.py  
-pelicanconf.pyc   
-publishconf.py  
-.git  
-</pre></div>
-
-
-<p>其中.git表示本目录被git所管理 ...</p>
-                    <a class="btn btn-default btn-xs" href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">more ...</a>
+<p>2014年6月2号，苹果在一年一度的WWDC上发布了新的编程语言Swift，根据苹果的官方介绍，Swift从开始研发到最终发布用了仅不足4年的时间，这应该算是一个比较短的时间周期了，另外WWDC上苹果还介绍了Swift的一些关键特性，例如：
+- Swift从一些脚本语言如Python、Ruby、Javascript上吸取了一些好的特性
+- 提供实时预览Playgrounds
+- 性能比Objective-C 提升了大约40%～50%  </p>
+<p>当然还有一些其他的特性，在这里就不列举了，不过从性能指标上来看，这个提升度是相当惊人的，这背后“必有蹊跷”，看看Swift的研发团队——苹果开发者工具部门总监克里斯·拉特纳（Chris Lattner）及其所带领的团队，我们可能恍然大悟，Lattner时LLVM项目的发起人，也是主要作者，在此，我们也简要介绍一下LLVM项目</p>
+<blockquote>
+<p>LVM，命名最早源自于底层虚拟机（Low Level Virtual Machine）的缩写。它是一个编译器的基础建设，以C++写成。它是为了任意一种编程语言写成的程序，利用虚拟技术，创造出编译时期，链结时期，运行时期以及“闲置时期”的优化。它最早是以C/C ...</p></blockquote>
+                    <a class="btn btn-default btn-xs" href="/swift-and-llvm.html">more ...</a>
                 </div>
             </article>
             <hr/>
