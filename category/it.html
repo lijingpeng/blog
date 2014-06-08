@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>依赖关系 - Frank Lee's Blog</title>
+    <title>IT - Frank Lee's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -44,7 +44,7 @@ Frank Lee's Blog            </a>
                         <li >
                             <a href="/category/git.html">Git</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="/category/it.html">It</a>
                         </li>
                         <li >
@@ -67,16 +67,16 @@ Frank Lee's Blog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="/ldd-ming-ling-de-jie-shao-he-shi-yong-fang-fa.html">ldd 命令的介绍和使用方法</a></h2>
+                <h2><a href="/swift-and-llvm.html">Swift and LLVM</a></h2>
                 <div class="summary"><hr />
-<p>ldd 能够显示可执行模块的dependency，其原理是通过设置一系列的环境变量，如下：LD_TRACE_LOADED_OBJECTS、LD_WARN、LD_BIND_NOW、LD_LIBRARY_VERSION、LD_VERBOSE等。当LD_TRACE_LOADED_OBJECTS环境变量不为空时，任何可执行程序在运行时，它都会只显示模块的dependency，而程序并不真正执行。</p>
-<p>它的执行原理就是通过ld-linux.so（elf动态库的装载器）来实现的。我们知道，ld-linux.so模块会先于executable模块程序工作，并获得控制权，因此当上述的那些环境变量被设置时，ld-linux.so选择了显示可执行模块的dependency。
-例如：</p>
-<div class="highlight"><pre>frank@linux:~/dev<span class="nv">$ </span>ldd a.out
-    linux-vdso.so.1 <span class="o">=</span>&gt;  <span class="o">(</span>0x00007fff3bffe000<span class="o">)</span>
-    libstdc++.so.6 <span class="o">=</span>&gt; /usr/lib/x86_64-linux-gnu/libstdc++.so.6 <span class="o">(</span>0x00007f1faa400000<span class="o">)</span>
-    libc.so.6 <span class="o">=</span>&gt; /lib/x86_64-linux-gnu ...</pre></div>
-                    <a class="btn btn-default btn-xs" href="/ldd-ming-ling-de-jie-shao-he-shi-yong-fang-fa.html">more ...</a>
+<p>2014年6月2号，苹果在一年一度的WWDC上发布了新的编程语言Swift，根据苹果的官方介绍，Swift从开始研发到最终发布用了仅不足4年的时间，这应该算是一个比较短的时间周期了，另外WWDC上苹果还介绍了Swift的一些关键特性，例如：
+- Swift从一些脚本语言如Python、Ruby、Javascript上吸取了一些好的特性
+- 提供实时预览Playgrounds
+- 性能比Objective-C 提升了大约40%～50%  </p>
+<p>当然还有一些其他的特性，在这里就不列举了，不过从性能指标上来看，这个提升度是相当惊人的，这背后“必有蹊跷”，看看Swift的研发团队——苹果开发者工具部门总监克里斯·拉特纳（Chris Lattner）及其所带领的团队，我们可能恍然大悟，Lattner时LLVM项目的发起人，也是主要作者，在此，我们也简要介绍一下LLVM项目</p>
+<blockquote>
+<p><font size = 2> LVM，命名最早源自于底层虚拟机（Low Level Virtual Machine）的缩写。它是一个编译器的基础建设，以C++写成。它是为了任意一种编程语言写成的程序，利用虚拟技术，创造出编译时期，链结时期，运行时期以及“闲置时期”的优化。它最早是以C/C ...</font></p></blockquote>
+                    <a class="btn btn-default btn-xs" href="/swift-and-llvm.html">more ...</a>
                 </div>
             </article>
             <hr/>
