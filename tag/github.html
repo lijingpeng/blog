@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Physicist - Frank Lee's Blog</title>
+    <title>github - Frank Lee's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,10 +11,10 @@
     
 
     <!-- Open Graph tags -->
-            <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Physicist"/>
-            <meta property="og:url" content="/physicist.html"/>
-            <meta property="og:description" content=""/>
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="Frank Lee's Blog"/>
+            <meta property="og:url" content=""/>
+            <meta property="og:description" content="Frank Lee's Blog"/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
@@ -44,7 +44,7 @@ Frank Lee's Blog            </a>
                         <li >
                             <a href="/category/git.html">Git</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="/category/photo.html">Photo</a>
                         </li>
             </ul>
@@ -60,38 +60,45 @@ Frank Lee's Blog            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="/physicist.html"
-                       rel="bookmark"
-                       title="Permalink to Physicist">
-                        Physicist
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-11-28T00:00:00"> Thu 28 November 2013</time>
-    </span>
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="/tag/photo.html">photo</a>
-    
-</footer><!-- /.post-info -->                    </div>
+            <article>
+                <h2><a href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">Github pages 搭建个人博客并绑定域名</a></h2>
+                <div class="summary"><h1>Github下利用pelican搭建个人博客并绑定域名</h1>
+<hr />
+<p>目前，github下pelican搭建的极简主义的博客越来越受到大家的欢迎，本文介绍在github中一个仓库同时保存Markdown博客主内容和HTML网页，并绑定域名。</p>
+<p>我们将markdown文件保存在仓库的master分支中，将HTML网页保存在gh-pages分支中，并将域名绑定到gh-pages分支，下面是操作步骤：</p>
+<ol>
+<li>首先在github创建仓库，并不局限于username.github.com这种的顶级域名仓库，如果想创建类似blog.example.com的博客，直接创建一个名字为blog的仓库即可。</li>
+<li>
+<p>克隆到本地：</p>
+<blockquote>
+<p>git clone git@github.com:yourusername/blog.git </p>
+</blockquote>
+</li>
+<li>
+<p>在克隆后的blog目录中初始化pelican工作目录 </p>
+<blockquote>
+<p>cd blog
+pelican-quickstart </p>
+</blockquote>
+</li>
+</ol>
+<p>这样，本地blog目录将会有以下目录结构：</p>
+<blockquote>
+<p>content/
+develop_server.sh*
+fabfile.py
+Makefile
+output/
+pelicanconf.py
+pelicanconf.pyc
+publishconf.py
+.git</p>
+</blockquote>
+<p>其中.git表示本目录被git所管理，因为我们知道markdown所写的内容必须放到content下，<strong>因此我们可以将 ...</strong></p>
+                    <a class="btn btn-default btn-xs" href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">more ...</a>
                 </div>
-                <p><img alt="Physicist" src="images/1.jpg" /></p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
+            </article>
+            <hr/>
 
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">

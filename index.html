@@ -42,6 +42,9 @@ Frank Lee's Blog            </a>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                         <li >
+                            <a href="/category/git.html">Git</a>
+                        </li>
+                        <li >
                             <a href="/category/photo.html">Photo</a>
                         </li>
             </ul>
@@ -57,6 +60,45 @@ Frank Lee's Blog            </a>
     <div class="row">
         <div class="col-sm-9">
 
+            <article>
+                <h2><a href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">Github pages 搭建个人博客并绑定域名</a></h2>
+                <div class="summary"><h1>Github下利用pelican搭建个人博客并绑定域名</h1>
+<hr />
+<p>目前，github下pelican搭建的极简主义的博客越来越受到大家的欢迎，本文介绍在github中一个仓库同时保存Markdown博客主内容和HTML网页，并绑定域名。</p>
+<p>我们将markdown文件保存在仓库的master分支中，将HTML网页保存在gh-pages分支中，并将域名绑定到gh-pages分支，下面是操作步骤：</p>
+<ol>
+<li>首先在github创建仓库，并不局限于username.github.com这种的顶级域名仓库，如果想创建类似blog.example.com的博客，直接创建一个名字为blog的仓库即可。</li>
+<li>
+<p>克隆到本地：</p>
+<blockquote>
+<p>git clone git@github.com:yourusername/blog.git </p>
+</blockquote>
+</li>
+<li>
+<p>在克隆后的blog目录中初始化pelican工作目录 </p>
+<blockquote>
+<p>cd blog
+pelican-quickstart </p>
+</blockquote>
+</li>
+</ol>
+<p>这样，本地blog目录将会有以下目录结构：</p>
+<blockquote>
+<p>content/
+develop_server.sh*
+fabfile.py
+Makefile
+output/
+pelicanconf.py
+pelicanconf.pyc
+publishconf.py
+.git</p>
+</blockquote>
+<p>其中.git表示本目录被git所管理，因为我们知道markdown所写的内容必须放到content下，<strong>因此我们可以将 ...</strong></p>
+                    <a class="btn btn-default btn-xs" href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
             <article>
                 <h2><a href="/physicist.html">Physicist</a></h2>
                 <div class="summary"><p><img alt="Physicist" src="images/1.jpg" /></p>
@@ -87,8 +129,28 @@ Frank Lee's Blog            </a>
                 <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group" id="tags">
                         <li class="list-group-item tag-4">
+                            <a href="/tag/github.html">
+                                github
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/blog.html">
+                                blog
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
                             <a href="/tag/photo.html">
                                 photo
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/pages.html">
+                                pages
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/yu-ming.html">
+                                域名
                             </a>
                         </li>
                     </ul>
@@ -128,7 +190,7 @@ Frank Lee's Blog            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2013 Frank Lee
+         <div class="col-xs-10">&copy; 2014 Frank Lee
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

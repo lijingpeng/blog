@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Physicist - Frank Lee's Blog</title>
+    <title>Github pages 搭建个人博客并绑定域名 - Frank Lee's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,9 +12,9 @@
 
     <!-- Open Graph tags -->
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Physicist"/>
-            <meta property="og:url" content="/physicist.html"/>
-            <meta property="og:description" content=""/>
+            <meta property="og:title" content="Github pages 搭建个人博客并绑定域名"/>
+            <meta property="og:url" content="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html"/>
+            <meta property="og:description" content="Github下利用pelican搭建个人博客并绑定域名 目前，github下pelican搭建的极简主义的博客越来越受到大家的欢迎，本文介绍在github中一个仓库同时保存Markdown博客主内容和HTML网页，并绑定域名。 我们将markdown文件保存在仓库的master分支中，将HTML网页保存在gh-pages分支中，并将域名绑定到gh-pages分支，下面是操作步骤： 首先在github创建仓库，并不局限于username.github.com这种的顶级域名仓库，如果想创建类似blog.example.com的博客，直接创建一个名字为blog的仓库即可。 克隆到本地： git clone git@github.com:yourusername/blog.git 在克隆后的blog目录中初始化pelican工作目录 cd blog pelican-quickstart 这样，本地blog目录将会有以下目录结构： content/ develop_server.sh* fabfile.py Makefile output/ pelicanconf.py pelicanconf.pyc publishconf.py .git 其中.git表示本目录被git所管理，因为我们知道markdown所写的内容必须放到content下，因此我们可以将 ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
@@ -41,10 +41,10 @@ Frank Lee's Blog            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="/category/git.html">Git</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="/category/photo.html">Photo</a>
                         </li>
             </ul>
@@ -64,10 +64,10 @@ Frank Lee's Blog            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="/physicist.html"
+                    <a href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html"
                        rel="bookmark"
-                       title="Permalink to Physicist">
-                        Physicist
+                       title="Permalink to Github pages 搭建个人博客并绑定域名">
+                        Github pages 搭建个人博客并绑定域名
                     </a>
                 </h1>
             </header>
@@ -77,17 +77,112 @@ Frank Lee's Blog            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-11-28T00:00:00"> Thu 28 November 2013</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-06-05T00:00:00"> Thu 05 June 2014</time>
     </span>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="/tag/photo.html">photo</a>
+	<a href="/tag/github.html">github</a>
+        /
+	<a href="/tag/pages.html">pages</a>
+        /
+	<a href="/tag/blog.html">blog</a>
+        /
+	<a href="/tag/yu-ming.html">域名</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p><img alt="Physicist" src="images/1.jpg" /></p>
+                <h1>Github下利用pelican搭建个人博客并绑定域名</h1>
+<hr />
+<p>目前，github下pelican搭建的极简主义的博客越来越受到大家的欢迎，本文介绍在github中一个仓库同时保存Markdown博客主内容和HTML网页，并绑定域名。</p>
+<p>我们将markdown文件保存在仓库的master分支中，将HTML网页保存在gh-pages分支中，并将域名绑定到gh-pages分支，下面是操作步骤：</p>
+<ol>
+<li>首先在github创建仓库，并不局限于username.github.com这种的顶级域名仓库，如果想创建类似blog.example.com的博客，直接创建一个名字为blog的仓库即可。</li>
+<li>
+<p>克隆到本地：</p>
+<blockquote>
+<p>git clone git@github.com:yourusername/blog.git </p>
+</blockquote>
+</li>
+<li>
+<p>在克隆后的blog目录中初始化pelican工作目录 </p>
+<blockquote>
+<p>cd blog
+pelican-quickstart </p>
+</blockquote>
+</li>
+</ol>
+<p>这样，本地blog目录将会有以下目录结构：</p>
+<blockquote>
+<p>content/
+develop_server.sh*
+fabfile.py
+Makefile
+output/
+pelicanconf.py
+pelicanconf.pyc
+publishconf.py
+.git</p>
+</blockquote>
+<p>其中.git表示本目录被git所管理，因为我们知道markdown所写的内容必须放到content下，<strong>因此我们可以将.git目录拷贝到content目录</strong></p>
+<blockquote>
+<p>cp -r .git content/</p>
+</blockquote>
+<p>这样就确保我们的md文件将会被同步到github仓库的master分支</p>
+<ol>
+<li>创建分支</li>
+<li>进入content目录，并创建gh-pages分支（必须是这个分支名字）<blockquote>
+<p>git checkout -b gh-pages
+push分支&gt; git push -u origin gh-pages
+切换到主分支&gt; git checkout master</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>在这一步骤中，只要我们自己创建gh-pages分支并同步到远端的时候，github会自动为我们建立一个可以访问的URL地址，格式是：http://username.github.io/blog</strong>
+5. 同步静态网站到分支
+pelican处理markdown生成的html文件将会放到output目录中，因此我们将gh-pages的checkout到该目录，以后html更新后，只需要在该目录下push即可。</p>
+<p>克隆分支  </p>
+<blockquote>
+<p>在blog目录下：
+git clone -b gh-pages git@github.com:username/blog.git output</p>
+</blockquote>
+<ol>
+<li>
+<p>测试</p>
+</li>
+<li>
+<p>在content目录下随便写一篇文章，例如example.md</p>
+<blockquote>
+<p>git status
+git add example.md
+git push origin master</p>
+</blockquote>
+</li>
+</ol>
+<p>这将会把该md文件同步到远端主分支，起到一定的备份作用</p>
+<ul>
+<li>退出到blog目录下<blockquote>
+<p>make html</p>
+</blockquote>
+</li>
+</ul>
+<p>生成HTML文件到output目录</p>
+<ul>
+<li>到output目录下<blockquote>
+<p>git status
+ git add .
+   git push origin gh-pages</p>
+</blockquote>
+</li>
+</ul>
+<p>这样就将网页同步到gh-pages分支了，打开浏览器，访问
+http://username.github.io/blog，看看是不是能访问了</p>
+<ol>
+<li>绑定域名</li>
+<li>在DNS解析商那设置二级域名，例如本例中的blog，添加CNAME，指向username.github.io.</li>
+<li>在output目录下创建CNAME文件，内容为要指向的域名，例如：blog.example.com，push到远端gh-pages分支即可。</li>
+</ol>
             </div>
             <!-- /.entry-content -->
         </article>
