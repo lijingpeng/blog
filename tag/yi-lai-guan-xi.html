@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>github - Frank Lee's Blog</title>
+    <title>依赖关系 - Frank Lee's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -64,37 +64,16 @@ Frank Lee's Blog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">Github pages 搭建个人博客并绑定域名</a></h2>
+                <h2><a href="/ldd-ming-ling-de-jie-shao-he-shi-yong-fang-fa.html">ldd 命令的介绍和使用方法</a></h2>
                 <div class="summary"><hr />
-<p>目前，github下pelican搭建的极简主义的博客越来越受到大家的欢迎，本文介绍在github中一个仓库同时保存Markdown博客主内容和HTML网页，并绑定域名。 我们将markdown文件保存在仓库的master分支中，将HTML网页保存在gh-pages分支中，并将域名绑定到gh-pages分支，下面是操作步骤：</p>
-<h3>1. 首先在github创建仓库</h3>
-<p>并不局限于username.github.com这种的顶级域名仓库，如果想创建类似blog.example.com的博客，直接创建一个名字为blog的仓库即可。</p>
-<h3>2. 克隆到本地：</h3>
-<div class="highlight"><pre> git clone git@github.com:yourusername/blog.git 
-</pre></div>
-
-
-<h3>3. 在克隆后的blog目录中初始化pelican工作目录</h3>
-<div class="highlight"><pre><span class="nb">cd </span>blog  
-pelican-quickstart 
-</pre></div>
-
-
-<p>这样，本地blog目录将会有以下目录结构：</p>
-<div class="highlight"><pre>content  
-develop_server.sh*  
-fabfile.py  
-Makefile  
-output  
-pelicanconf.py  
-pelicanconf.pyc   
-publishconf.py  
-.git  
-</pre></div>
-
-
-<p>其中.git表示本目录被git所管理 ...</p>
-                    <a class="btn btn-default btn-xs" href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">more ...</a>
+<p>ldd 能够显示可执行模块的dependency，其原理是通过设置一系列的环境变量，如下：LD_TRACE_LOADED_OBJECTS、LD_WARN、LD_BIND_NOW、LD_LIBRARY_VERSION、LD_VERBOSE等。当LD_TRACE_LOADED_OBJECTS环境变量不为空时，任何可执行程序在运行时，它都会只显示模块的dependency，而程序并不真正执行。</p>
+<p>它的执行原理就是通过ld-linux.so（elf动态库的装载器）来实现的。我们知道，ld-linux.so模块会先于executable模块程序工作，并获得控制权，因此当上述的那些环境变量被设置时，ld-linux.so选择了显示可执行模块的dependency。
+例如：</p>
+<div class="highlight"><pre>frank@linux:~/dev<span class="nv">$ </span>ldd a.out
+    linux-vdso.so.1 <span class="o">=</span>&gt;  <span class="o">(</span>0x00007fff3bffe000<span class="o">)</span>
+    libstdc++.so.6 <span class="o">=</span>&gt; /usr/lib/x86_64-linux-gnu/libstdc++.so.6 <span class="o">(</span>0x00007f1faa400000<span class="o">)</span>
+    libc.so.6 <span class="o">=</span>&gt; /lib/x86_64-linux-gnu ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="/ldd-ming-ling-de-jie-shao-he-shi-yong-fang-fa.html">more ...</a>
                 </div>
             </article>
             <hr/>
