@@ -5,7 +5,7 @@ Category: IT
 
 ------------
 一张图读懂开源许可证
-![Open source license](images/license)
+![Open source license](images/license.png)
 
 </br>
 ####参考文献
