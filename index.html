@@ -42,6 +42,9 @@ Frank Lee's Blog            </a>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                         <li >
+                            <a href="/category/dev.html">Dev</a>
+                        </li>
+                        <li >
                             <a href="/category/git.html">Git</a>
                         </li>
                         <li >
@@ -66,6 +69,31 @@ Frank Lee's Blog            </a>
     <div class="row">
         <div class="col-sm-9">
 
+            <article>
+                <h2><a href="/cyu-yan-zhong-de-shi-jian-han-shu.html">C语言中的时间函数</a></h2>
+                <div class="summary"><hr />
+<h3>asctime（将时间和日期以字符串格式表示）</h3>
+<p>相关函数 time，ctime，gmtime，localtime</p>
+<p>表头文件 time.h</p>
+<p>定义函数
+char * asctime(const struct tm * timeptr);</p>
+<p>函数说明
+asctime()将参数timeptr所指的tm结构中的信息转换成真实世界所使用的时间日期表示方法，然后将结果以字符串形态返回。此函数已经由时区转换成当地时间，字符串格式为:“Wed Jun 30 21:49:08 1993\n”</p>
+<p>返回值
+若再调用相关的时间日期函数，此字符串可能会被破坏。此函数与ctime不同处在于传入的参数是不同的结构体，一个是sturct tm另一个是time_t。</p>
+<p>附加说明
+返回一字符串表示目前当地的时间日期。</p>
+<p>范例</p>
+<div class="highlight"><pre><span class="cp">#include &lt;time.h&gt;</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">time_t</span> <span class="n">timep</span><span class="p">;</span>
+    <span class="n">time</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">s ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="/cyu-yan-zhong-de-shi-jian-han-shu.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
             <article>
                 <h2><a href="/swift-and-llvm.html">Swift and LLVM</a></h2>
                 <div class="summary"><hr />
@@ -159,8 +187,8 @@ publishconf.py
                 <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group" id="tags">
                         <li class="list-group-item tag-4">
-                            <a href="/tag/swift.html">
-                                swift
+                            <a href="/tag/github.html">
+                                github
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -169,18 +197,8 @@ publishconf.py
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/yi-lai-guan-xi.html">
-                                依赖关系
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
                             <a href="/tag/blog.html">
                                 blog
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/linux.html">
-                                linux
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -189,8 +207,8 @@ publishconf.py
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/yu-ming.html">
-                                域名
+                            <a href="/tag/swift.html">
+                                swift
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -199,8 +217,28 @@ publishconf.py
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/github.html">
-                                github
+                            <a href="/tag/yu-ming.html">
+                                域名
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/time.html">
+                                time
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/c.html">
+                                C
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/yi-lai-guan-xi.html">
+                                依赖关系
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/linux.html">
+                                linux
                             </a>
                         </li>
                         <li class="list-group-item tag-4">

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>C语言中的时间函数 - Frank Lee's Blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- Open Graph tags -->
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="C语言中的时间函数"/>
+            <meta property="og:url" content="/cyu-yan-zhong-de-shi-jian-han-shu.html"/>
+            <meta property="og:description" content="asctime（将时间和日期以字符串格式表示） 相关函数 time，ctime，gmtime，localtime 表头文件 time.h 定义函数 char * asctime(const struct tm * timeptr); 函数说明 asctime()将参数timeptr所指的tm结构中的信息转换成真实世界所使用的时间日期表示方法，然后将结果以字符串形态返回。此函数已经由时区转换成当地时间，字符串格式为:“Wed Jun 30 21:49:08 1993\n” 返回值 若再调用相关的时间日期函数，此字符串可能会被破坏。此函数与ctime不同处在于传入的参数是不同的结构体，一个是sturct tm另一个是time_t。 附加说明 返回一字符串表示目前当地的时间日期。 范例 #include <time.h> main() { time_t timep; time (&timep); printf(“%s ..."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Frank Lee's Blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/dev.html">Dev</a>
+                        </li>
+                        <li >
+                            <a href="/category/git.html">Git</a>
+                        </li>
+                        <li >
+                            <a href="/category/it.html">It</a>
+                        </li>
+                        <li >
+                            <a href="/category/linux.html">Linux</a>
+                        </li>
+                        <li >
+                            <a href="/category/photo.html">Photo</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/cyu-yan-zhong-de-shi-jian-han-shu.html"
+                       rel="bookmark"
+                       title="Permalink to C语言中的时间函数">
+                        C语言中的时间函数
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-06-09T00:00:00"> Mon 09 June 2014</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/c.html">C</a>
+        /
+	<a href="/tag/time.html">time</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <hr />
+<h3>asctime（将时间和日期以字符串格式表示）</h3>
+<p>相关函数 time，ctime，gmtime，localtime</p>
+<p>表头文件 time.h</p>
+<p>定义函数
+char * asctime(const struct tm * timeptr);</p>
+<p>函数说明
+asctime()将参数timeptr所指的tm结构中的信息转换成真实世界所使用的时间日期表示方法，然后将结果以字符串形态返回。此函数已经由时区转换成当地时间，字符串格式为:“Wed Jun 30 21:49:08 1993\n”</p>
+<p>返回值
+若再调用相关的时间日期函数，此字符串可能会被破坏。此函数与ctime不同处在于传入的参数是不同的结构体，一个是sturct tm另一个是time_t。</p>
+<p>附加说明
+返回一字符串表示目前当地的时间日期。</p>
+<p>范例</p>
+<div class="highlight"><pre><span class="cp">#include &lt;time.h&gt;</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">time_t</span> <span class="n">timep</span><span class="p">;</span>
+    <span class="n">time</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">s</span><span class="err">”</span><span class="p">,</span><span class="n">asctime</span><span class="p">(</span><span class="n">gmtime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">)));</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>执行
+Sat Oct 28 02:10:06 2000</p>
+<hr />
+<h3>ctime（将时间和日期以字符串格式表示）</h3>
+<p>相关函数 time，asctime，gmtime，localtime</p>
+<p>表头文件time.h</p>
+<p>定义函数
+char <em>ctime(const time_t </em>timep);</p>
+<p>函数说明
+ctime()将参数timep所指的time_t结构中的信息转换成真实世界所使用的时间日期表示方法，然后将结果以字符串形态返回。此函数已经由时区转换成当地时间，字符串格式为“Wed Jun 30 21 :49 :08 1993\n”。若再调用相关的时间日期函数，此字符串可能会被破坏。</p>
+<p>返回值
+返回一字符串表示目前当地的时间日期。</p>
+<p>范例</p>
+<div class="highlight"><pre><span class="cp">#include&lt;time.h&gt;</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">time_t</span> <span class="n">timep</span><span class="p">;</span>
+    <span class="n">time</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">s</span><span class="err">”</span><span class="p">,</span><span class="n">ctime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>执行
+Sat Oct 28 10 : 12 : 05 2000</p>
+<hr />
+<h3>gettimeofday（取得目前的时间）</h3>
+<p>相关函数 time，ctime，ftime，settimeofday</p>
+<p>表头文件 sys/time.h unistd.h</p>
+<p>定义函数
+int gettimeofday ( struct timeval * tv , struct timezone * tz )</p>
+<p>函数说明
+gettimeofday()会把目前的时间有tv所指的结构返回，当地时区的信息则放到tz所指的结构中。
+timeval结构定义为:</p>
+<div class="highlight"><pre><span class="k">struct</span> <span class="n">timeval</span><span class="p">{</span>
+    <span class="kt">long</span> <span class="n">tv_sec</span><span class="p">;</span> <span class="cm">/*秒*/</span>
+    <span class="kt">long</span> <span class="n">tv_usec</span><span class="p">;</span> <span class="cm">/*微秒*/</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>timezone 结构定义为:</p>
+<div class="highlight"><pre><span class="k">struct</span> <span class="n">timezone</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">tz_minuteswest</span><span class="p">;</span> <span class="cm">/*和Greenwich 时间差了多少分钟*/</span>
+    <span class="kt">int</span> <span class="n">tz_dsttime</span><span class="p">;</span> <span class="cm">/*日光节约时间的状态*/</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>上述两个结构都定义在/usr/include/sys/time.h。tz_dsttime 所代表的状态如下</p>
+<div class="highlight"><pre><span class="n">DST_NONE</span> <span class="cm">/*不使用*/</span>
+<span class="n">DST_USA</span> <span class="cm">/*美国*/</span>
+<span class="n">DST_AUST</span> <span class="cm">/*澳洲*/</span>
+<span class="n">DST_WET</span> <span class="cm">/*西欧*/</span>
+<span class="n">DST_MET</span> <span class="cm">/*中欧*/</span>
+<span class="n">DST_EET</span> <span class="cm">/*东欧*/</span>
+<span class="n">DST_CAN</span> <span class="cm">/*加拿大*/</span>
+<span class="n">DST_GB</span> <span class="cm">/*大不列颠*/</span>
+<span class="n">DST_RUM</span> <span class="cm">/*罗马尼亚*/</span>
+<span class="n">DST_TUR</span> <span class="cm">/*土耳其*/</span>
+<span class="n">DST_AUSTALT</span> <span class="cm">/*澳洲（1986年以后）*/</span>
+</pre></div>
+
+
+<p>返回值
+成功则返回0，失败返回－1，错误代码存于errno。附加说明EFAULT指针tv和tz所指的内存空间超出存取权限。</p>
+<p>范例</p>
+<div class="highlight"><pre><span class="cp">#include&lt;sys/time.h&gt;</span>
+<span class="cp">#include&lt;unistd.h&gt;</span>
+<span class="n">main</span><span class="p">(){</span>
+    <span class="k">struct</span> <span class="n">timeval</span> <span class="n">tv</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">timezone</span> <span class="n">tz</span><span class="p">;</span>
+    <span class="n">gettimeofday</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">tv</span> <span class="p">,</span> <span class="o">&amp;</span><span class="n">tz</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">tv_sec</span><span class="p">;</span> <span class="o">%</span><span class="n">d</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">tv</span><span class="p">,.</span><span class="n">tv_sec</span><span class="p">)</span> <span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">tv_usec</span><span class="p">;</span> <span class="o">%</span><span class="n">d</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span><span class="n">tv</span><span class="p">.</span><span class="n">tv_usec</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">tz_minuteswest</span><span class="p">;</span> <span class="o">%</span><span class="n">d</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">tz</span><span class="p">.</span><span class="n">tz_minuteswest</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">tz_dsttime</span><span class="p">,</span> <span class="o">%</span><span class="n">d</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span><span class="n">tz</span><span class="p">.</span><span class="n">tz_dsttime</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>执行
+tv_sec: 974857339</p>
+<p>tv_usec:136996</p>
+<p>tz_minuteswest:-540</p>
+<p>tz_dsttime:0</p>
+<hr />
+<h3>gmtime（取得目前时间和日期）</h3>
+<p>相关函数 time,asctime,ctime,localtime</p>
+<p>表头文件time.h</p>
+<p>定义函数 struct tm<em>gmtime(const time_t</em>timep);</p>
+<p>函数说明 gmtime()将参数timep 所指的time_t 结构中的信息转换成真实世界所使用的时间日期表示方法，然后将结果由结构tm返回。</p>
+<p>结构tm的定义为</p>
+<div class="highlight"><pre><span class="k">struct</span> <span class="n">tm</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">tm_sec</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">tm_min</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">tm_hour</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">tm_mday</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">tm_mon</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">tm_year</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">tm_wday</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">tm_yday</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">tm_isdst</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="n">tm_sec</span> <span class="err">代表目前秒数，正常范围为</span><span class="mi">0</span><span class="o">-</span><span class="mi">59</span><span class="err">，但允许至</span><span class="mi">61</span><span class="err">秒</span>
+<span class="kt">int</span> <span class="n">tm_min</span> <span class="err">代表目前分数，范围</span><span class="mi">0</span><span class="o">-</span><span class="mi">59</span>
+<span class="kt">int</span> <span class="n">tm_hour</span> <span class="err">从午夜算起的时数，范围为</span><span class="mi">0</span><span class="o">-</span><span class="mi">23</span>
+<span class="kt">int</span> <span class="n">tm_mday</span> <span class="err">目前月份的日数，范围</span><span class="mo">01</span><span class="o">-</span><span class="mi">31</span>
+<span class="kt">int</span> <span class="n">tm_mon</span> <span class="err">代表目前月份，从一月算起，范围从</span><span class="mi">0</span><span class="o">-</span><span class="mi">11</span>
+<span class="kt">int</span> <span class="n">tm_year</span> <span class="err">从</span><span class="mi">1900</span> <span class="err">年算起至今的年数</span>
+<span class="kt">int</span> <span class="n">tm_wday</span> <span class="err">一星期的日数，从星期一算起，范围为</span><span class="mi">0</span><span class="o">-</span><span class="mi">6</span>
+<span class="kt">int</span> <span class="n">tm_yday</span> <span class="err">从今年</span><span class="mi">1</span><span class="err">月</span><span class="mi">1</span><span class="err">日算起至今的天数，范围为</span><span class="mi">0</span><span class="o">-</span><span class="mi">365</span>
+<span class="kt">int</span> <span class="n">tm_isdst</span> <span class="err">日光节约时间的旗标</span>
+</pre></div>
+
+
+<p>此函数返回的时间日期未经时区转换，而是UTC时间。</p>
+<p>返回值 返回结构tm代表目前UTC 时间</p>
+<p>范例</p>
+<div class="highlight"><pre><span class="cp">#include &lt;time.h&gt;</span>
+<span class="n">main</span><span class="p">(){</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">wday</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;Sun&quot;</span><span class="p">,</span><span class="s">&quot;Mon&quot;</span><span class="p">,</span><span class="s">&quot;Tue&quot;</span><span class="p">,</span><span class="s">&quot;Wed&quot;</span><span class="p">,</span><span class="s">&quot;Thu&quot;</span><span class="p">,</span><span class="s">&quot;Fri&quot;</span><span class="p">,</span><span class="s">&quot;Sat&quot;</span><span class="p">};</span>
+    <span class="kt">time_t</span> <span class="n">timep</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">tm</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+    <span class="n">time</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">p</span><span class="o">=</span><span class="n">gmtime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span><span class="o">%</span><span class="n">d</span><span class="o">%</span><span class="n">d</span><span class="err">”</span><span class="p">,(</span><span class="mi">1900</span><span class="o">+</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_year</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_mon</span><span class="p">),</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_mday</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">s</span><span class="o">%</span><span class="n">d</span><span class="p">;</span><span class="o">%</span><span class="n">d</span><span class="p">;</span><span class="o">%</span><span class="n">d</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">wday</span><span class="p">[</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_wday</span><span class="p">],</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_hour</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_min</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_sec</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>执行
+2000/10/28 Sat 8:15:38</p>
+<hr />
+<h3>localtime（取得当地目前时间和日期）</h3>
+<p>相关函数 time, asctime, ctime, gmtime</p>
+<p>表头文件time.h</p>
+<p>定义函数 struct tm *localtime(const time_t * timep);</p>
+<p>函数说明 localtime()将参数timep所指的time_t结构中的信息转换成真实世界所使用的时间日期表示方法，然后将结果由结构tm返回。结构tm的定义请参考gmtime()。此函数返回的时间日期已经转换成当地时区。</p>
+<p>返回值 返回结构tm代表目前的当地时间。</p>
+<p>范例</p>
+<div class="highlight"><pre><span class="cp">#include&lt;time.h&gt;</span>
+<span class="n">main</span><span class="p">(){</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">wday</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="err">“</span><span class="n">Sun</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="n">Mon</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="n">Tue</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="n">Wed</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="n">Thu</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="n">Fri</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="n">Sat</span><span class="err">”</span><span class="p">};</span>
+    <span class="kt">time_t</span> <span class="n">timep</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">tm</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+    <span class="n">time</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">p</span><span class="o">=</span><span class="n">localtime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span> <span class="cm">/*取得当地时间*/</span>
+    <span class="n">printf</span> <span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span><span class="o">%</span><span class="n">d</span><span class="o">%</span><span class="n">d</span> <span class="err">”</span><span class="p">,</span> <span class="p">(</span><span class="mi">1900</span><span class="o">+</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_year</span><span class="p">),(</span> <span class="n">l</span><span class="o">+</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_mon</span><span class="p">),</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_mday</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">s</span><span class="o">%</span><span class="n">d</span><span class="o">:%</span><span class="n">d</span><span class="o">:%</span><span class="n">d</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">wday</span><span class="p">[</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_wday</span><span class="p">],</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_hour</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_min</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">tm_sec</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>执行
+2000/10/28 Sat 11:12:22</p>
+<hr />
+<h3>mktime（将时间结构数据转换成经过的秒数）</h3>
+<p>相关函数 time，asctime，gmtime，localtime</p>
+<p>表头文件time.h</p>
+<p>定义函数 time_t mktime(strcut tm * timeptr);</p>
+<p>函数说明 mktime()用来将参数timeptr所指的tm结构数据转换成从公元1970年1月1日0时0分0 秒算起至今的UTC时间所经过的秒数。</p>
+<p>返回值 返回经过的秒数。</p>
+<p>范例
+/<em> 用time()取得时间（秒数），利用localtime()
+转换成struct tm 再利用mktine（）将struct tm转换成原来的秒数</em>/</p>
+<div class="highlight"><pre><span class="cp">#include&lt;time.h&gt;</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">time_t</span> <span class="n">timep</span><span class="p">;</span>
+    <span class="n">strcut</span> <span class="n">tm</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+    <span class="n">time</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">time</span><span class="p">()</span> <span class="o">:</span> <span class="o">%</span><span class="n">d</span> <span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">p</span><span class="o">=</span><span class="n">localtime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">timep</span> <span class="o">=</span> <span class="n">mktime</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">time</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">localtime</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">mktime</span><span class="p">()</span><span class="o">:%</span><span class="n">d</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span><span class="n">timep</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>执行
+time():974943297</p>
+<p>time()-&gt;localtime()-&gt;mktime():974943297</p>
+<hr />
+<h3>settimeofday（设置目前时间）</h3>
+<p>相关函数 time，ctime，ftime，gettimeofday</p>
+<p>表头文件 sys/time.h unistd.h</p>
+<p>定义函数 int settimeofday ( const struct timeval <em>tv,const struct timezone </em>tz);</p>
+<p>函数说明 settimeofday()会把目前时间设成由tv所指的结构信息，当地时区信息则设成tz所指的结构。详细的说明请参考gettimeofday()。注意，只有root权限才能使用此函数修改时间。</p>
+<p>返回值
+成功则返回0，失败返回－1，错误代码存于errno。</p>
+<p>错误代码
+EPERM 并非由root权限调用settimeofday（），权限不够。</p>
+<p>EINVAL 时区或某个数据是不正确的，无法正确设置时间。</p>
+<hr />
+<h3>time（取得目前的时间）</h3>
+<p>相关函数 ctime，ftime，gettimeofday</p>
+<p>表头文件time.h</p>
+<p>定义函数 time_t time(time_t *t);</p>
+<p>函数说明 此函数会返回从公元1970年1月1日的UTC时间从0时0分0秒算起到现在所经过的秒数。如果t 并非空指针的话，此函数也会将返回值存到t指针所指的内存。</p>
+<p>返回值
+成功则返回秒数，失败则返回((time_t)-1)值，错误原因存于errno中。</p>
+<p>范例</p>
+<div class="highlight"><pre><span class="cp">#include&lt;time.h&gt;</span>
+<span class="n">mian</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">seconds</span><span class="o">=</span> <span class="n">time</span><span class="p">((</span><span class="kt">time_t</span><span class="o">*</span><span class="p">)</span><span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span><span class="n">seconds</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>执行
+9.73E+08</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr />
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'franklee'; // required: replace example with your forum shortname
+            var disqus_identifier = 'cyu-yan-zhong-de-shi-jian-han-shu';
+            var disqus_url = '/cyu-yan-zhong-de-shi-jian-han-shu.html';
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3 well well-sm" id="sidebar">
+
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="http://www.lijingpeng.org"><i
+                            class="fa fa-home page-square fa-lg"></i> Home Page
+                    </a></li>
+                    <li class="list-group-item"><a href="http://texas.lijingpeng.org"><i
+                            class="fa fa-paper-square fa-lg"></i> Paper
+                    </a></li>
+                  </ul>
+                </li>
+
+
+
+                <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                    <ul class="list-group" id="tags">
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/github.html">
+                                github
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/pages.html">
+                                pages
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/blog.html">
+                                blog
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/photo.html">
+                                photo
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/swift.html">
+                                swift
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/ldd.html">
+                                ldd
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/yu-ming.html">
+                                域名
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/time.html">
+                                time
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/c.html">
+                                C
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/yi-lai-guan-xi.html">
+                                依赖关系
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/linux.html">
+                                linux
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/llvm.html">
+                                llvm
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+      </ul>
+    </li>
+
+        </ul>
+    </section>
+
+</aside>        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 Frank Lee
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="//code.jquery.com/jquery.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'franklee'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+</body>
+</html>

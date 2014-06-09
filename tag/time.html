@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>pages - Frank Lee's Blog</title>
+    <title>time - Frank Lee's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -70,37 +70,27 @@ Frank Lee's Blog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">Github pages 搭建个人博客并绑定域名</a></h2>
+                <h2><a href="/cyu-yan-zhong-de-shi-jian-han-shu.html">C语言中的时间函数</a></h2>
                 <div class="summary"><hr />
-<p>目前，github下pelican搭建的极简主义的博客越来越受到大家的欢迎，本文介绍在github中一个仓库同时保存Markdown博客主内容和HTML网页，并绑定域名。 我们将markdown文件保存在仓库的master分支中，将HTML网页保存在gh-pages分支中，并将域名绑定到gh-pages分支，下面是操作步骤：</p>
-<h3>1. 首先在github创建仓库</h3>
-<p>并不局限于username.github.com这种的顶级域名仓库，如果想创建类似blog.example.com的博客，直接创建一个名字为blog的仓库即可。</p>
-<h3>2. 克隆到本地：</h3>
-<div class="highlight"><pre> git clone git@github.com:yourusername/blog.git 
-</pre></div>
-
-
-<h3>3. 在克隆后的blog目录中初始化pelican工作目录</h3>
-<div class="highlight"><pre><span class="nb">cd </span>blog  
-pelican-quickstart 
-</pre></div>
-
-
-<p>这样，本地blog目录将会有以下目录结构：</p>
-<div class="highlight"><pre>content  
-develop_server.sh*  
-fabfile.py  
-Makefile  
-output  
-pelicanconf.py  
-pelicanconf.pyc   
-publishconf.py  
-.git  
-</pre></div>
-
-
-<p>其中.git表示本目录被git所管理 ...</p>
-                    <a class="btn btn-default btn-xs" href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">more ...</a>
+<h3>asctime（将时间和日期以字符串格式表示）</h3>
+<p>相关函数 time，ctime，gmtime，localtime</p>
+<p>表头文件 time.h</p>
+<p>定义函数
+char * asctime(const struct tm * timeptr);</p>
+<p>函数说明
+asctime()将参数timeptr所指的tm结构中的信息转换成真实世界所使用的时间日期表示方法，然后将结果以字符串形态返回。此函数已经由时区转换成当地时间，字符串格式为:“Wed Jun 30 21:49:08 1993\n”</p>
+<p>返回值
+若再调用相关的时间日期函数，此字符串可能会被破坏。此函数与ctime不同处在于传入的参数是不同的结构体，一个是sturct tm另一个是time_t。</p>
+<p>附加说明
+返回一字符串表示目前当地的时间日期。</p>
+<p>范例</p>
+<div class="highlight"><pre><span class="cp">#include &lt;time.h&gt;</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">time_t</span> <span class="n">timep</span><span class="p">;</span>
+    <span class="n">time</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">s ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="/cyu-yan-zhong-de-shi-jian-han-shu.html">more ...</a>
                 </div>
             </article>
             <hr/>
