@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>linux - Frank Lee's Blog</title>
+    <title>开源，许可 - Frank Lee's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -50,7 +50,7 @@ Frank Lee's Blog            </a>
                         <li >
                             <a href="/category/it.html">It</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="/category/linux.html">Linux</a>
                         </li>
                         <li >
@@ -70,16 +70,15 @@ Frank Lee's Blog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="/ldd-ming-ling-de-jie-shao-he-shi-yong-fang-fa.html">ldd 命令的介绍和使用方法</a></h2>
+                <h2><a href="/tu-jie-ge-chong-kai-yuan-xu-ke-zheng.html">图解各种开源许可证</a></h2>
                 <div class="summary"><hr />
-<p>ldd 能够显示可执行模块的dependency，其原理是通过设置一系列的环境变量，如下：LD_TRACE_LOADED_OBJECTS、LD_WARN、LD_BIND_NOW、LD_LIBRARY_VERSION、LD_VERBOSE等。当LD_TRACE_LOADED_OBJECTS环境变量不为空时，任何可执行程序在运行时，它都会只显示模块的dependency，而程序并不真正执行。</p>
-<p>它的执行原理就是通过ld-linux.so（elf动态库的装载器）来实现的。我们知道，ld-linux.so模块会先于executable模块程序工作，并获得控制权，因此当上述的那些环境变量被设置时，ld-linux.so选择了显示可执行模块的dependency。
-例如：</p>
-<div class="highlight"><pre>frank@linux:~/dev<span class="nv">$ </span>ldd a.out
-    linux-vdso.so.1 <span class="o">=</span>&gt;  <span class="o">(</span>0x00007fff3bffe000<span class="o">)</span>
-    libstdc++.so.6 <span class="o">=</span>&gt; /usr/lib/x86_64-linux-gnu/libstdc++.so.6 <span class="o">(</span>0x00007f1faa400000<span class="o">)</span>
-    libc.so.6 <span class="o">=</span>&gt; /lib/x86_64-linux-gnu ...</pre></div>
-                    <a class="btn btn-default btn-xs" href="/ldd-ming-ling-de-jie-shao-he-shi-yong-fang-fa.html">more ...</a>
+<p>一张图读懂开源许可证
+<img alt="Open source license" src="images/license" /></p>
+<p></br></p>
+<h4>参考文献</h4>
+<hr />
+<p>图片来自网络</p>
+                    <a class="btn btn-default btn-xs" href="/tu-jie-ge-chong-kai-yuan-xu-ke-zheng.html">more ...</a>
                 </div>
             </article>
             <hr/>
