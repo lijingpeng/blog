@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>开源，许可 - Frank Lee's Blog</title>
+    <title>Algorithm - Frank Lee's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -41,7 +41,7 @@ Frank Lee's Blog            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="/category/algorithm.html">Algorithm</a>
                         </li>
                         <li >
@@ -73,15 +73,25 @@ Frank Lee's Blog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="/tu-jie-ge-chong-kai-yuan-xu-ke-zheng.html">图解各种开源许可证</a></h2>
+                <h2><a href="/zui-chang-gong-gong-zi-xu-lie.html">最长公共子序列</a></h2>
                 <div class="summary"><hr />
-<p>一张图读懂开源许可证
-<img alt="Open source license" src="images/license.png" /></p>
-<p></br></p>
-<h4>参考文献</h4>
-<hr />
-<p>图片来自网络</p>
-                    <a class="btn btn-default btn-xs" href="/tu-jie-ge-chong-kai-yuan-xu-ke-zheng.html">more ...</a>
+<div class="highlight"><pre><span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">iostream</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">algorithm</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">cstdio</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">memory.h</span><span class="o">&gt;</span>
+<span class="nx">using</span> <span class="nx">namespace</span> <span class="nx">std</span><span class="p">;</span>
+<span class="nx">const</span> <span class="nx">int</span> <span class="k">MAX</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+<span class="nx">int</span> <span class="nx">lcs_length</span><span class="p">(</span><span class="nx">const</span> <span class="nx">char</span> <span class="o">*</span><span class="nx">x</span><span class="p">,</span> <span class="nx">const</span> <span class="nx">char</span> <span class="o">*</span><span class="nx">y</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">xlen</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">ylen</span><span class="p">,</span> <span class="nx">int</span> <span class="p">(</span><span class="o">*</span><span class="nx">c</span><span class="p">)</span><span class="err">[</span><span class="k">MAX</span><span class="cp">]</span>)
+{
+    int i, j;
+    for(i = 1; i <span class="err">&lt;</span>= xlen; ++i)
+    {
+        for(j = 1; j <span class="err">&lt;</span>= ylen; ++j)
+        {
+            if(x ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="/zui-chang-gong-gong-zi-xu-lie.html">more ...</a>
                 </div>
             </article>
             <hr/>
