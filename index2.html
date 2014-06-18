@@ -73,6 +73,20 @@ Frank Lee's Blog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="/ldd-ming-ling-de-jie-shao-he-shi-yong-fang-fa.html">ldd 命令的介绍和使用方法</a></h2>
+                <div class="summary"><hr />
+<p>ldd 能够显示可执行模块的dependency，其原理是通过设置一系列的环境变量，如下：LD_TRACE_LOADED_OBJECTS、LD_WARN、LD_BIND_NOW、LD_LIBRARY_VERSION、LD_VERBOSE等。当LD_TRACE_LOADED_OBJECTS环境变量不为空时，任何可执行程序在运行时，它都会只显示模块的dependency，而程序并不真正执行。</p>
+<p>它的执行原理就是通过ld-linux.so（elf动态库的装载器）来实现的。我们知道，ld-linux.so模块会先于executable模块程序工作，并获得控制权，因此当上述的那些环境变量被设置时，ld-linux.so选择了显示可执行模块的dependency。
+例如：</p>
+<div class="highlight"><pre>frank@linux:~/dev<span class="nv">$ </span>ldd a.out
+    linux-vdso.so.1 <span class="o">=</span>&gt;  <span class="o">(</span>0x00007fff3bffe000<span class="o">)</span>
+    libstdc++.so.6 <span class="o">=</span>&gt; /usr/lib/x86_64-linux-gnu/libstdc++.so.6 <span class="o">(</span>0x00007f1faa400000<span class="o">)</span>
+    libc.so.6 <span class="o">=</span>&gt; /lib/x86_64-linux-gnu ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="/ldd-ming-ling-de-jie-shao-he-shi-yong-fang-fa.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html">Github pages 搭建个人博客并绑定域名</a></h2>
                 <div class="summary"><hr />
 <p>目前，github下pelican搭建的极简主义的博客越来越受到大家的欢迎，本文介绍在github中一个仓库同时保存Markdown博客主内容和HTML网页，并绑定域名。 我们将markdown文件保存在仓库的master分支中，将HTML网页保存在gh-pages分支中，并将域名绑定到gh-pages分支，下面是操作步骤：</p>
@@ -146,43 +160,8 @@ publishconf.py
                 <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group" id="tags">
                         <li class="list-group-item tag-4">
-                            <a href="/tag/blog.html">
-                                blog
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
                             <a href="/tag/yi-lai-guan-xi.html">
                                 依赖关系
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/c.html">
-                                C
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/github.html">
-                                github
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/yu-ming.html">
-                                域名
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/kai-yuan-xu-ke.html">
-                                开源，许可
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/swift.html">
-                                swift
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/ldd.html">
-                                ldd
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -191,8 +170,43 @@ publishconf.py
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
+                            <a href="/tag/ldd.html">
+                                ldd
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
                             <a href="/tag/lcs.html">
                                 LCS
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/c.html">
+                                C
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/jin-cheng.html">
+                                进程
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/yu-ming.html">
+                                域名
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/xian-cheng.html">
+                                线程
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/kai-yuan-xu-ke.html">
+                                开源，许可
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/llvm.html">
+                                llvm
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -201,18 +215,28 @@ publishconf.py
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
+                            <a href="/tag/swift.html">
+                                swift
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
                             <a href="/tag/linux.html">
                                 linux
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/photo.html">
-                                photo
+                            <a href="/tag/blog.html">
+                                blog
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/llvm.html">
-                                llvm
+                            <a href="/tag/github.html">
+                                github
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/photo.html">
+                                photo
                             </a>
                         </li>
                     </ul>
