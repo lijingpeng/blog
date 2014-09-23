@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Articles in IT category - Frank's zone</title>
+        <title> Articles by Frank - Frank's zone</title>
         <meta charset="utf-8" />
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/theme/static/css/style.css" rel="stylesheet" />
@@ -19,7 +19,7 @@
 				<h2 class="text-muted"></h2>
              </div>
 <section id="content" class="content">
-<h2>Articles in the IT category</h2>
+<h2>Articles by Frank</h2>
 
         <article class="hentry">
                 <header> <h2 class="entry-title"><a href="/zabbix.html" rel="bookmark" title="Permalink to Zabbix">Zabbix</a></h2> </header>
@@ -27,6 +27,28 @@
 <p>zabbix(音同 zæbix)是一个基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。</p>
 <p>zabbix能监视各种网络参数，保证服务器系统的安全运营；并提供灵活的通知机制以让系统管理员快速定位/解决存在的各种问题。 zabbix由2部分构成，zabbix server与可选组件zabbix agent. zabbix server可以通过SNMP，zabbix agent，ping，端口监视等方法提供对远程服务器/网络状态的监视，数据收集等功能，它可以运行在Linux, Solaris, HP-UX, AIX, Free BSD, Open BSD, OS X等平台上。</p>
 <p>zabbix agent需要安装在被监视的目标服务器上，它主要完成对硬件信息或与操作系统有关的内存，CPU等信息的收集。zabbix agent可以运行在Linux,Solaris,HP-UX,AIX,Free BSD,Open BSD, OS X, Tru64/OSF1, Windows NT4.0 ...</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/cyu-yan-zhong-de-shi-jian-han-shu.html" rel="bookmark" title="Permalink to C语言中的时间函数">C语言中的时间函数</a></h2> </header>
+                <div class="entry-content"> <hr />
+<h3>asctime（将时间和日期以字符串格式表示）</h3>
+<p>相关函数 time，ctime，gmtime，localtime</p>
+<p>表头文件 time.h</p>
+<p>定义函数
+char * asctime(const struct tm * timeptr);</p>
+<p>函数说明
+asctime()将参数timeptr所指的tm结构中的信息转换成真实世界所使用的时间日期表示方法，然后将结果以字符串形态返回。此函数已经由时区转换成当地时间，字符串格式为:“Wed Jun 30 21:49:08 1993\n”</p>
+<p>返回值
+若再调用相关的时间日期函数，此字符串可能会被破坏。此函数与ctime不同处在于传入的参数是不同的结构体，一个是sturct tm另一个是time_t。</p>
+<p>附加说明
+返回一字符串表示目前当地的时间日期。</p>
+<p>范例</p>
+<div class="highlight"><pre><span class="cp">#include &lt;time.h&gt;</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">time_t</span> <span class="n">timep</span><span class="p">;</span>
+    <span class="n">time</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">s ...</span></pre></div> </div><!-- entry-content -->
         </article>
         <article class="hentry">
                 <header> <h2 class="entry-title"><a href="/jin-cheng-yu-xian-cheng-de-yi-ge-jian-dan-jie-shi.html" rel="bookmark" title="Permalink to 进程与线程的一个简单解释">进程与线程的一个简单解释</a></h2> </header>
@@ -60,6 +82,26 @@
 <p>图片来自网络</p> </div><!-- entry-content -->
         </article>
         <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/zui-chang-gong-gong-zi-xu-lie.html" rel="bookmark" title="Permalink to 最长公共子序列">最长公共子序列</a></h2> </header>
+                <div class="entry-content"> <hr />
+<div class="highlight"><pre><span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">iostream</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">algorithm</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">cstdio</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">memory.h</span><span class="o">&gt;</span>
+<span class="nx">using</span> <span class="nx">namespace</span> <span class="nx">std</span><span class="p">;</span>
+<span class="nx">const</span> <span class="nx">int</span> <span class="k">MAX</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+<span class="nx">int</span> <span class="nx">lcs_length</span><span class="p">(</span><span class="nx">const</span> <span class="nx">char</span> <span class="o">*</span><span class="nx">x</span><span class="p">,</span> <span class="nx">const</span> <span class="nx">char</span> <span class="o">*</span><span class="nx">y</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">xlen</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">ylen</span><span class="p">,</span> <span class="nx">int</span> <span class="p">(</span><span class="o">*</span><span class="nx">c</span><span class="p">)</span><span class="err">[</span><span class="k">MAX</span><span class="cp">]</span>)
+{
+    int i, j;
+    for(i = 1; i <span class="err">&lt;</span>= xlen; ++i)
+    {
+        for(j = 1; j <span class="err">&lt;</span>= ylen; ++j)
+        {
+            if(x ...</pre></div> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
                 <header> <h2 class="entry-title"><a href="/swift-and-llvm.html" rel="bookmark" title="Permalink to Swift and LLVM">Swift and LLVM</a></h2> </header>
                 <div class="entry-content"> <hr />
 <p>2014年6月2号，苹果在一年一度的WWDC上发布了新的编程语言Swift，根据苹果的官方介绍，Swift从开始研发到最终发布用了仅不足4年的时间，这应该算是一个比较短的时间周期了，另外WWDC上苹果还介绍了Swift的一些关键特性，例如：
@@ -73,7 +115,7 @@
 <div class="pager">
       <ul>
                         <li class="previous disabled"><a>← Previous</a></li>
-                        <li class="next disabled"><a>Next →</a></li>
+						<li class="next"><a href="/author/frank2.html">Next →</a></li>
       </ul>
     </div>
 </section><!-- content -->

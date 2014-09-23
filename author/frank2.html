@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Articles in linux tag - Frank's zone</title>
+        <title> Articles by Frank - Frank's zone</title>
         <meta charset="utf-8" />
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/theme/static/css/style.css" rel="stylesheet" />
@@ -13,13 +13,13 @@
             <div class="header">
                 <ul class="nav nav-pills pull-right">
                     <li class=""><a href="">Home</a></li>
-                    <li class="active"active><a href="/archives.html">Archives</a></li>
+                    <li class="active"><a href="/archives.html">Archives</a></li>
                 </ul>
                 <h3 class="text-muted"><a href="">Frank's zone</a></h3>
 				<h2 class="text-muted"></h2>
              </div>
 <section id="content" class="content">
-<h2>Articles with the linux tag</h2>
+<h2>Articles by Frank</h2>
 
         <article class="hentry">
                 <header> <h2 class="entry-title"><a href="/ldd-ming-ling-de-jie-shao-he-shi-yong-fang-fa.html" rel="bookmark" title="Permalink to ldd 命令的介绍和使用方法">ldd 命令的介绍和使用方法</a></h2> </header>
@@ -32,9 +32,45 @@
     libstdc++.so.6 <span class="o">=</span>&gt; /usr/lib/x86_64-linux-gnu/libstdc++.so.6 <span class="o">(</span>0x00007f1faa400000<span class="o">)</span>
     libc.so.6 <span class="o">=</span>&gt; /lib/x86_64-linux-gnu ...</pre></div> </div><!-- entry-content -->
         </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/github-pages-da-jian-ge-ren-bo-ke-bing-bang-ding-yu-ming.html" rel="bookmark" title="Permalink to Github pages 搭建个人博客并绑定域名">Github pages 搭建个人博客并绑定域名</a></h2> </header>
+                <div class="entry-content"> <hr />
+<p>目前，github下pelican搭建的极简主义的博客越来越受到大家的欢迎，本文介绍在github中一个仓库同时保存Markdown博客主内容和HTML网页，并绑定域名。 我们将markdown文件保存在仓库的master分支中，将HTML网页保存在gh-pages分支中，并将域名绑定到gh-pages分支，下面是操作步骤：</p>
+<h3>1. 首先在github创建仓库</h3>
+<p>并不局限于username.github.com这种的顶级域名仓库，如果想创建类似blog.example.com的博客，直接创建一个名字为blog的仓库即可。</p>
+<h3>2. 克隆到本地：</h3>
+<div class="highlight"><pre> git clone git@github.com:yourusername/blog.git 
+</pre></div>
+
+
+<h3>3. 在克隆后的blog目录中初始化pelican工作目录</h3>
+<div class="highlight"><pre><span class="nb">cd </span>blog  
+pelican-quickstart 
+</pre></div>
+
+
+<p>这样，本地blog目录将会有以下目录结构：</p>
+<div class="highlight"><pre>content  
+develop_server.sh*  
+fabfile.py  
+Makefile  
+output  
+pelicanconf.py  
+pelicanconf.pyc   
+publishconf.py  
+.git  
+</pre></div>
+
+
+<p>其中.git表示本目录被git所管理 ...</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/physicist.html" rel="bookmark" title="Permalink to Physicist">Physicist</a></h2> </header>
+                <div class="entry-content"> <p><img alt="Physicist" src="images/1.jpg" /></p> </div><!-- entry-content -->
+        </article>
 <div class="pager">
       <ul>
-                        <li class="previous disabled"><a>← Previous</a></li>
+						<li class="previous"><a href="/author/frank.html">← Previous</a></li>
                         <li class="next disabled"><a>Next →</a></li>
       </ul>
     </div>
