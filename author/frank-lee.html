@@ -1,9 +1,123 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-</head>
-<body>
+    <head>
+        <title> Articles by Frank Lee - Frank Lee's Blog</title>
+        <meta charset="utf-8" />
+        <!--link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/-->
+        <link href="/theme/static/css/style.css" rel="stylesheet" />
+        <link href="/theme/static/css/bootstrap.min.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
 
-</body>
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href="/">Home</a></li>
+                    <li ><a href="http://blog.lijingpeng.org">Blog</a></li>
+                    <li class="active"><a href="/archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="">Frank Lee's Blog</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="content">
+<h2>Articles by Frank Lee</h2>
+
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/zabbix.html" rel="bookmark" title="Permalink to Zabbix">Zabbix</a></h2> </header>
+                <div class="entry-content"> <hr />
+<p>zabbix(音同 zæbix)是一个基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。</p>
+<p>zabbix能监视各种网络参数，保证服务器系统的安全运营；并提供灵活的通知机制以让系统管理员快速定位/解决存在的各种问题。 zabbix由2部分构成，zabbix server与可选组件zabbix agent. zabbix server可以通过SNMP，zabbix agent，ping，端口监视等方法提供对远程服务器/网络状态的监视，数据收集等功能，它可以运行在Linux, Solaris, HP-UX, AIX, Free BSD, Open BSD, OS X等平台上。</p>
+<p>zabbix agent需要安装在被监视的目标服务器上，它主要完成对硬件信息或与操作系统有关的内存，CPU等信息的收集。zabbix agent可以运行在Linux,Solaris,HP-UX,AIX,Free BSD,Open BSD, OS X, Tru64/OSF1, Windows NT4.0 ...</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/cyu-yan-zhong-de-shi-jian-han-shu.html" rel="bookmark" title="Permalink to C语言中的时间函数">C语言中的时间函数</a></h2> </header>
+                <div class="entry-content"> <hr />
+<h3>asctime（将时间和日期以字符串格式表示）</h3>
+<p>相关函数 time，ctime，gmtime，localtime</p>
+<p>表头文件 time.h</p>
+<p>定义函数
+char * asctime(const struct tm * timeptr);</p>
+<p>函数说明
+asctime()将参数timeptr所指的tm结构中的信息转换成真实世界所使用的时间日期表示方法，然后将结果以字符串形态返回。此函数已经由时区转换成当地时间，字符串格式为:“Wed Jun 30 21:49:08 1993\n”</p>
+<p>返回值
+若再调用相关的时间日期函数，此字符串可能会被破坏。此函数与ctime不同处在于传入的参数是不同的结构体，一个是sturct tm另一个是time_t。</p>
+<p>附加说明
+返回一字符串表示目前当地的时间日期。</p>
+<p>范例</p>
+<div class="highlight"><pre><span class="cp">#include &lt;time.h&gt;</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">time_t</span> <span class="n">timep</span><span class="p">;</span>
+    <span class="n">time</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">s ...</span></pre></div> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/jin-cheng-yu-xian-cheng-de-yi-ge-jian-dan-jie-shi.html" rel="bookmark" title="Permalink to 进程与线程的一个简单解释">进程与线程的一个简单解释</a></h2> </header>
+                <div class="entry-content"> <hr />
+<h3>进程和线程的类比</h3>
+<hr />
+<h4>1. 计算机的核心是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。</h4>
+<p><img alt="1" src="images/pt1.jpg" /></p>
+<h4>2. 假定工厂的电力有限，一次只能供给一个车间使用。也就是说，一个车间开工的时候，其他车间都必须停工。背后的含义就是，单个CPU一次只能运行一个任务。</h4>
+<p><img alt="2" src="images/pt2.png" /></p>
+<h4>3. 进程就好比工厂的车间，它代表CPU所能处理的单个任务。任一时刻，CPU总是运行一个进程，其他进程处于非运行状态。</h4>
+<p><img alt="3" src="images/pt3.jpg" /></p>
+<h4>4. 一个车间里，可以有很多工人。他们协同完成一个任务。</h4>
+<p><img alt="4" src="images/pt4.jpg" /></p>
+<h4>5. 线程就好比车间里的工人。一个进程可以包括多个线程。</h4>
+<p><img alt="5" src="images/pt5.jpg" /></p>
+<h4>6. 车间的空间是工人们共享的，比如许多房间是每个工人都可以进出的。这象征一个进程的内存空间是共享的，每个线程都可以使用这些共享内存。</h4>
+<p><img alt="" src="images/pt6.png" /></p>
+<h4>7. 可是，每间房间的大小不同，有些房间最多只能容纳一个人，比如厕所。里面有人的时候，其他人就不能进去了。这代表一个线程使用某些共享内存时，其他线程必须等它结束，才能使用这一块内存。</h4>
+<p><img alt="" src="images/pt7.jpg" /></p>
+<h4>8. 一个防止他人进入的简单方法，就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开再进去。这就叫 ...</h4> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/tu-jie-ge-chong-kai-yuan-xu-ke-zheng.html" rel="bookmark" title="Permalink to 图解各种开源许可证">图解各种开源许可证</a></h2> </header>
+                <div class="entry-content"> <hr />
+<p>一张图读懂开源许可证
+<img alt="Open source license" src="images/license.png" /></p>
+<p></br></p>
+<h4>参考文献</h4>
+<hr />
+<p>图片来自网络</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/zui-chang-gong-gong-zi-xu-lie.html" rel="bookmark" title="Permalink to 最长公共子序列">最长公共子序列</a></h2> </header>
+                <div class="entry-content"> <hr />
+<div class="highlight"><pre><span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">iostream</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">algorithm</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">cstdio</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">memory.h</span><span class="o">&gt;</span>
+<span class="nx">using</span> <span class="nx">namespace</span> <span class="nx">std</span><span class="p">;</span>
+<span class="nx">const</span> <span class="nx">int</span> <span class="k">MAX</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+<span class="nx">int</span> <span class="nx">lcs_length</span><span class="p">(</span><span class="nx">const</span> <span class="nx">char</span> <span class="o">*</span><span class="nx">x</span><span class="p">,</span> <span class="nx">const</span> <span class="nx">char</span> <span class="o">*</span><span class="nx">y</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">xlen</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">ylen</span><span class="p">,</span> <span class="nx">int</span> <span class="p">(</span><span class="o">*</span><span class="nx">c</span><span class="p">)</span><span class="err">[</span><span class="k">MAX</span><span class="cp">]</span>)
+{
+    int i, j;
+    for(i = 1; i <span class="err">&lt;</span>= xlen; ++i)
+    {
+        for(j = 1; j <span class="err">&lt;</span>= ylen; ++j)
+        {
+            if(x ...</pre></div> </div><!-- entry-content -->
+        </article>
+<div class="pager">
+      <ul>
+                        <li class="previous disabled"><a>← Previous</a></li>
+						<li class="next"><a href="/author/frank-lee2.html">Next →</a></li>
+      </ul>
+    </div>
+</section><!-- content -->
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="">Frank Lee's Blog</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
 </html>

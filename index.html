@@ -1,90 +1,37 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
-<head>
-    <title>Frank Lee's Blog</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+<html>
+    <head>
+        <title>Frank Lee's Blog</title>
+        <meta charset="utf-8" />
+        <!--link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/-->
+        <link href="/theme/static/css/style.css" rel="stylesheet" />
+        <link href="/theme/static/css/bootstrap.min.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
 
-    <!-- Open Graph tags -->
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="Frank Lee's Blog"/>
-            <meta property="og:url" content=""/>
-            <meta property="og:description" content="Frank Lee's Blog"/>
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li ><a href="http://blog.lijingpeng.org">Blog</a></li>
+                    <li><a href="/archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href="">Frank Lee's Blog</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="content">
 
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
-
-
-</head>
-<body>
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand">
-Frank Lee's Blog            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                        <li >
-                            <a href="/category/algorithm.html">Algorithm</a>
-                        </li>
-                        <li >
-                            <a href="/category/dev.html">Dev</a>
-                        </li>
-                        <li >
-                            <a href="/category/git.html">Git</a>
-                        </li>
-                        <li >
-                            <a href="/category/it.html">It</a>
-                        </li>
-                        <li >
-                            <a href="/category/linux.html">Linux</a>
-                        </li>
-                        <li >
-                            <a href="/category/photo.html">Photo</a>
-                        </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</div> <!-- /.navbar -->
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-
-            <article>
-                <h2><a href="/zabbix.html">Zabbix</a></h2>
-                <div class="summary"><hr />
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/zabbix.html" rel="bookmark" title="Permalink to Zabbix">Zabbix</a></h2> </header>
+                <div class="entry-content"> <hr />
 <p>zabbix(音同 zæbix)是一个基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。</p>
 <p>zabbix能监视各种网络参数，保证服务器系统的安全运营；并提供灵活的通知机制以让系统管理员快速定位/解决存在的各种问题。 zabbix由2部分构成，zabbix server与可选组件zabbix agent. zabbix server可以通过SNMP，zabbix agent，ping，端口监视等方法提供对远程服务器/网络状态的监视，数据收集等功能，它可以运行在Linux, Solaris, HP-UX, AIX, Free BSD, Open BSD, OS X等平台上。</p>
-<p>zabbix agent需要安装在被监视的目标服务器上，它主要完成对硬件信息或与操作系统有关的内存，CPU等信息的收集。zabbix agent可以运行在Linux,Solaris,HP-UX,AIX,Free BSD,Open BSD, OS X, Tru64/OSF1, Windows NT4.0 ...</p>
-                    <a class="btn btn-default btn-xs" href="/zabbix.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/cyu-yan-zhong-de-shi-jian-han-shu.html">C语言中的时间函数</a></h2>
-                <div class="summary"><hr />
+<p>zabbix agent需要安装在被监视的目标服务器上，它主要完成对硬件信息或与操作系统有关的内存，CPU等信息的收集。zabbix agent可以运行在Linux,Solaris,HP-UX,AIX,Free BSD,Open BSD, OS X, Tru64/OSF1, Windows NT4.0 ...</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/cyu-yan-zhong-de-shi-jian-han-shu.html" rel="bookmark" title="Permalink to C语言中的时间函数">C语言中的时间函数</a></h2> </header>
+                <div class="entry-content"> <hr />
 <h3>asctime（将时间和日期以字符串格式表示）</h3>
 <p>相关函数 time，ctime，gmtime，localtime</p>
 <p>表头文件 time.h</p>
@@ -102,14 +49,11 @@ asctime()将参数timeptr所指的tm结构中的信息转换成真实世界所�
 <span class="p">{</span>
     <span class="kt">time_t</span> <span class="n">timep</span><span class="p">;</span>
     <span class="n">time</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">timep</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">s ...</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="/cyu-yan-zhong-de-shi-jian-han-shu.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/jin-cheng-yu-xian-cheng-de-yi-ge-jian-dan-jie-shi.html">进程与线程的一个简单解释</a></h2>
-                <div class="summary"><hr />
+    <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">s ...</span></pre></div> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/jin-cheng-yu-xian-cheng-de-yi-ge-jian-dan-jie-shi.html" rel="bookmark" title="Permalink to 进程与线程的一个简单解释">进程与线程的一个简单解释</a></h2> </header>
+                <div class="entry-content"> <hr />
 <h3>进程和线程的类比</h3>
 <hr />
 <h4>1. 计算机的核心是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。</h4>
@@ -126,27 +70,21 @@ asctime()将参数timeptr所指的tm结构中的信息转换成真实世界所�
 <p><img alt="" src="images/pt6.png" /></p>
 <h4>7. 可是，每间房间的大小不同，有些房间最多只能容纳一个人，比如厕所。里面有人的时候，其他人就不能进去了。这代表一个线程使用某些共享内存时，其他线程必须等它结束，才能使用这一块内存。</h4>
 <p><img alt="" src="images/pt7.jpg" /></p>
-<h4>8. 一个防止他人进入的简单方法，就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开再进去。这就叫 ...</h4>
-                    <a class="btn btn-default btn-xs" href="/jin-cheng-yu-xian-cheng-de-yi-ge-jian-dan-jie-shi.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/tu-jie-ge-chong-kai-yuan-xu-ke-zheng.html">图解各种开源许可证</a></h2>
-                <div class="summary"><hr />
+<h4>8. 一个防止他人进入的简单方法，就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开再进去。这就叫 ...</h4> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/tu-jie-ge-chong-kai-yuan-xu-ke-zheng.html" rel="bookmark" title="Permalink to 图解各种开源许可证">图解各种开源许可证</a></h2> </header>
+                <div class="entry-content"> <hr />
 <p>一张图读懂开源许可证
 <img alt="Open source license" src="images/license.png" /></p>
 <p></br></p>
 <h4>参考文献</h4>
 <hr />
-<p>图片来自网络</p>
-                    <a class="btn btn-default btn-xs" href="/tu-jie-ge-chong-kai-yuan-xu-ke-zheng.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/zui-chang-gong-gong-zi-xu-lie.html">最长公共子序列</a></h2>
-                <div class="summary"><hr />
+<p>图片来自网络</p> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/zui-chang-gong-gong-zi-xu-lie.html" rel="bookmark" title="Permalink to 最长公共子序列">最长公共子序列</a></h2> </header>
+                <div class="entry-content"> <hr />
 <div class="highlight"><pre><span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">iostream</span><span class="o">&gt;</span>
 <span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">algorithm</span><span class="o">&gt;</span>
 <span class="vi">#include</span> <span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span>
@@ -162,182 +100,23 @@ asctime()将参数timeptr所指的tm结构中的信息转换成真实世界所�
     {
         for(j = 1; j <span class="err">&lt;</span>= ylen; ++j)
         {
-            if(x ...</pre></div>
-                    <a class="btn btn-default btn-xs" href="/zui-chang-gong-gong-zi-xu-lie.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-
-    <ul class="pagination">
-            <li class="prev disabled"><a href="#">&laquo;</a></li>
-                <li class="active"><a
-                        href="/index.html">1</a></li>
-                <li class=""><a
-                        href="/index2.html">2</a></li>
-            <li class="next"><a
-                    href="/index2.html">&raquo;</a></li>
-    </ul>
-        </div>
-        <div class="col-sm-3 well well-sm" id="sidebar">
-
-<aside>
-    <section>
-        <ul class="list-group list-group-flush">
-                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-                  <ul class="list-group" id="social">
-                    <li class="list-group-item"><a href="http://www.lijingpeng.org"><i
-                            class="fa fa-home page-square fa-lg"></i> Home Page
-                    </a></li>
-                    <li class="list-group-item"><a href="http://texas.lijingpeng.org"><i
-                            class="fa fa-paper-square fa-lg"></i> Paper
-                    </a></li>
-                  </ul>
-                </li>
-
-
-
-                <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                    <ul class="list-group" id="tags">
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/c.html">
-                                C
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/time.html">
-                                time
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/ldd.html">
-                                ldd
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/swift.html">
-                                swift
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/blog.html">
-                                blog
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/jian-kong-zabbix.html">
-                                监控，zabbix
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/xian-cheng.html">
-                                线程
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/yu-ming.html">
-                                域名
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/yi-lai-guan-xi.html">
-                                依赖关系
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/github.html">
-                                github
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/kai-yuan-xu-ke.html">
-                                开源，许可
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/jin-cheng.html">
-                                进程
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/linux.html">
-                                linux
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/lcs.html">
-                                LCS
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/photo.html">
-                                photo
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/pages.html">
-                                pages
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/llvm.html">
-                                llvm
-                            </a>
-                        </li>
-                    </ul>
-                </li>    
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
-            </a>
-        </li>
+            if(x ...</pre></div> </div><!-- entry-content -->
+        </article>
+<div class="pager">
+      <ul>
+                        <li class="previous disabled"><a>← Previous</a></li>
+						<li class="next"><a href="/index2.html">Next →</a></li>
       </ul>
-    </li>
-
-        </ul>
-    </section>
-
-</aside>        </div>
     </div>
-</div>
-<footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-         <div class="col-xs-10">&copy; 2014 Frank Lee
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="//code.jquery.com/jquery.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/theme/js/bootstrap.min.js"></script>
-
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="/theme/js/respond.min.js"></script>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'franklee'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var s = document.createElement('script');
-            s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
-    </script>
-</body>
+</section><!-- content -->
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href="">Frank Lee's Blog</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
 </html>
