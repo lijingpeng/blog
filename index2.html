@@ -23,6 +23,26 @@
 <section id="content" class="content">
 
         <article class="hentry">
+                <header> <h2 class="entry-title"><a href="/zui-chang-gong-gong-zi-xu-lie.html" rel="bookmark" title="Permalink to 最长公共子序列">最长公共子序列</a></h2> </header>
+                <div class="entry-content"> <hr />
+<div class="highlight"><pre><span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">iostream</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">algorithm</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">cstdio</span><span class="o">&gt;</span>
+<span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">memory.h</span><span class="o">&gt;</span>
+<span class="nx">using</span> <span class="nx">namespace</span> <span class="nx">std</span><span class="p">;</span>
+<span class="nx">const</span> <span class="nx">int</span> <span class="k">MAX</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+<span class="nx">int</span> <span class="nx">lcs_length</span><span class="p">(</span><span class="nx">const</span> <span class="nx">char</span> <span class="o">*</span><span class="nx">x</span><span class="p">,</span> <span class="nx">const</span> <span class="nx">char</span> <span class="o">*</span><span class="nx">y</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">xlen</span><span class="p">,</span> <span class="nx">int</span> <span class="nx">ylen</span><span class="p">,</span> <span class="nx">int</span> <span class="p">(</span><span class="o">*</span><span class="nx">c</span><span class="p">)</span><span class="err">[</span><span class="k">MAX</span><span class="cp">]</span>)
+{
+    int i, j;
+    for(i = 1; i <span class="err">&lt;</span>= xlen; ++i)
+    {
+        for(j = 1; j <span class="err">&lt;</span>= ylen; ++j)
+        {
+            if(x ...</pre></div> </div><!-- entry-content -->
+        </article>
+        <article class="hentry">
                 <header> <h2 class="entry-title"><a href="/swift-and-llvm.html" rel="bookmark" title="Permalink to Swift and LLVM">Swift and LLVM</a></h2> </header>
                 <div class="entry-content"> <hr />
 <p>2014年6月2号，苹果在一年一度的WWDC上发布了新的编程语言Swift，根据苹果的官方介绍，Swift从开始研发到最终发布用了仅不足4年的时间，这应该算是一个比较短的时间周期了，另外WWDC上苹果还介绍了Swift的一些关键特性，例如：
